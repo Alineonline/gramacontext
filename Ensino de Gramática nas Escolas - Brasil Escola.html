@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html xml:lang="pt-br" lang="pt-BR" xmlns:fb="http://ogp.me/ns/fb#">
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"6a5485b2c2",applicationID:"422257420"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <link href="https://meuartigo.brasilescola.uol.com.br/assets/images/favicon.ico" rel="shortcut icon" title="Favicon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+        <title>Ensino de Gramática nas Escolas - Brasil Escola</title>
+        
+    <!-- Meta tags --> 
+        <meta name="description" content="Ensino de gramática nas aulas de língua portuguesa, ensino de língua portuguesa nas escolas, como o professor de lingua portugues deve proceder,..." />
+        
+        <meta name="keywords" content="Ensino de gramática nas aulas de língua portuguesa, ensino de língua portuguesa nas escolas, como o professor de lingua portugues deve proceder,..." />
+        <meta http-equiv="content-language" content="pt-br"/>
+    
+    <!-- Metas FB e twitter --> 
+    <meta property="og:locale" content="pt_BR" />
+        <meta property="og:title" content="Ensino de Gramática nas Escolas - Brasil Escola" />
+    <meta property="twitter:title" content="Ensino de Gramática nas Escolas - Brasil Escola" />
+            <meta name="og:description" content="Ensino de gramática nas aulas de língua portuguesa, ensino de língua portuguesa nas escolas, como o professor de lingua portugues deve proceder,...">
+    <meta property="twitter:description" content="Ensino de gramática nas aulas de língua portuguesa, ensino de língua portuguesa nas escolas, como o professor de lingua portugues deve proceder,..." />
+        <meta property="og:site_name" content="Meu Artigo Brasil Escola" />
+    <meta property="og:url" content="https://meuartigo.brasilescola.uol.com.br/gramatica/ensino-gramatica-nas-escolas.htm" />
+	    
+    <link rel="canonical" href="https://meuartigo.brasilescola.uol.com.br/gramatica/ensino-gramatica-nas-escolas.htm" />
+
+    <link rel="alternate" media="only screen and (max-width: 1024px)" href="https://m.meuartigo.brasilescola.uol.com.br/gramatica/ensino-gramatica-nas-escolas.htm" />
+
+    <link href="https://meuartigo.brasilescola.uol.com.br/rss/" type="application/rss+xml" rel="alternate" title="Conteúdo via RSS" />
+
+        <link rel="amphtml" href="https://m.meuartigo.brasilescola.uol.com.br/amp/gramatica/ensino-gramatica-nas-escolas.htm" />
+    
+    <meta name="robots" content="index,follow" />
+    <meta name="robots" content="noodp" />
+
+    <script type="text/javascript">
+        const AUTH_URL = 'https://auth.brasilescola.uol.com.br';
+        const APP_URL = 'https://meuartigo.brasilescola.uol.com.br';
+        const BE_URL = 'https://brasilescola.uol.com.br';
+        const API_URL = 'https://app.brasilescola.uol.com.br';
+        const CANONICAL = 'https://meuartigo.brasilescola.uol.com.br/gramatica/ensino-gramatica-nas-escolas.htm';
+        const YT_API_KEY = 'AIzaSyDa9nYAv25EjzmDzE0AtWxoErhr8lof6Zs';
+        const GOOGLE_CLIENT_ID = '512419952759-t83o1vmlsdh9j0qj3l0vt5rg4rkrl4fc.apps.googleusercontent.com';
+        const BE_DOMAINS = JSON.parse('[{"domain":"brasilescola","url":"https:\/\/brasilescola.uol.com.br"},{"domain":"educador","url":"https:\/\/educador.brasilescola.uol.com.br"},{"domain":"exercicios","url":"https:\/\/exercicios.brasilescola.uol.com.br"},{"domain":"guerras","url":"https:\/\/guerras.brasilescola.uol.com.br"},{"domain":"monografias","url":"https:\/\/monografias.brasilescola.uol.com.br"},{"domain":"vestibular","url":"https:\/\/vestibular.brasilescola.uol.com.br"}]');
+    </script>
+
+    <!-- ./END -->
+    <link rel="stylesheet" type="text/css" media="all" href="https://meuartigo.brasilescola.uol.com.br/assets/css/all.min.css?v=1615563285&verification=1.0.1" />
+
+
+
+    
+            <!-- Structured data -->
+        <script type="application/ld+json">
+            {"@context":"http:\/\/schema.org","@type":"Article","mainEntityOfPage":"https:\/\/meuartigo.brasilescola.uol.com.br\/gramatica\/ensino-gramatica-nas-escolas.htm","publisher":{"@type":"Organization","name":"Meu Artigo Brasil Escola","logo":{"@type":"ImageObject","url":"https:\/\/meuartigo.brasilescola.uol.com.br\/assets\/images\/cabecalho\/logo_250x60.png","width":"250","height":"60"}},"headline":"Ensino de Gram\u00e1tica nas Escolas","datePublished":"2008-12-14-0320:05:12","dateModified":"2008-12-16-0318:12:49","author":{"@type":"Person","name":"Michele Tolentino"},"description":"Ensino de gram\u00e1tica nas aulas de l\u00edngua portuguesa, ensino de l\u00edngua portuguesa nas escolas, como o professor de lingua portugues deve proceder,...","image":{"@type":"ImageObject","url":"https:\/\/meuartigo.brasilescola.uol.com.br\/assets\/images\/default-image.jpg"}}
+        </script>
+        
+    <!-- UOL TAG MANAGER -->
+    <script type="text/javascript">
+        window.universal_variable = window.universal_variable || {};
+        window.universal_variable.dfp = {
+               "custom_params" : {
+                    "subchan" : ""
+                }
+        }
+        window.uolads = window.uolads || [];
+        (function() {
+            var scr = document.createElement("script");
+                scr.async = true;
+                scr.src = "//tm.jsuol.com.br/uoltm.js?id=fnht1u";
+            var el = document.getElementsByTagName("script")[0];
+                el.parentNode.insertBefore(scr, el);
+        })();
+    </script>
+    <!-- End UOL Tag Manager -->
+    
+    <!-- GOOGLE ANALYTICS -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-6338943-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-6338943-1');
+    </script>
+    <!-- END GOOGLE ANALYTICS -->
+</head>    
+    <body>
+        <div class="menu-topo">
+	<div class="centro">
+                    <div class="menu-topo__logo">
+                <a href="https://brasilescola.uol.com.br">
+                    <img src="https://meuartigo.brasilescola.uol.com.br/assets/images/cabecalho/brasil-escola-logo.png" alt="Brasil Escola" title="Brasil Escola">
+                </a>
+            </div>
+
+            <ul class="menu-topo__itens">
+                                    <li class="menu-topo__item menu-topo__item--disciplinas">
+                        <a class="menu-topo__link"   href="https://brasilescola.uol.com.br/disciplinas">
+                            Disciplinas
+                        </a>
+                    </li>
+                                    <li class="menu-topo__item menu-topo__item--especial">
+                        <a class="menu-topo__link"   href="https://brasilescola.uol.com.br/canais">
+                            Especial
+                        </a>
+                    </li>
+                                    <li class="menu-topo__item menu-topo__item--pesquisas">
+                        <a class="menu-topo__link"   href="https://brasilescola.uol.com.br/canais">
+                            + Pesquisas
+                        </a>
+                    </li>
+                                    <li class="menu-topo__item menu-topo__item--enem">
+                        <a class="menu-topo__link"   href="https://vestibular.brasilescola.uol.com.br/enem/">
+                            Enem
+                        </a>
+                    </li>
+                                    <li class="menu-topo__item menu-topo__item--vestibular">
+                        <a class="menu-topo__link"   href="https://vestibular.brasilescola.uol.com.br">
+                            Vestibular
+                        </a>
+                    </li>
+                                    <li class="menu-topo__item menu-topo__item--educador">
+                        <a class="menu-topo__link"   href="https://educador.brasilescola.uol.com.br">
+                            Educador
+                        </a>
+                    </li>
+                                    <li class="menu-topo__item menu-topo__item--o_que_e">
+                        <a class="menu-topo__link"   href="https://brasilescola.uol.com.br/o-que-e">
+                            O que é?
+                        </a>
+                    </li>
+                                    <li class="menu-topo__item menu-topo__item--exercicios">
+                        <a class="menu-topo__link"   href="https://exercicios.brasilescola.uol.com.br">
+                            Exercícios
+                        </a>
+                    </li>
+                                    <li class="menu-topo__item menu-topo__item--monografias">
+                        <a class="menu-topo__link"   href="https://monografias.brasilescola.uol.com.br">
+                            Monografias
+                        </a>
+                    </li>
+                                    <li class="menu-topo__item menu-topo__item--escola_kids">
+                        <a class="menu-topo__link" target=_blank  href="https://escolakids.uol.com.br">
+                            Escola Kids
+                        </a>
+                    </li>
+                                    <li class="menu-topo__item menu-topo__item--videos">
+                        <a class="menu-topo__link"   href="https://brasilescola.uol.com.br/videos">
+                            Vídeos
+                        </a>
+                    </li>
+                                    <li class="menu-topo__item menu-topo__item--canais">
+                        <a class="menu-topo__link"   href="https://brasilescola.uol.com.br/canais">
+                            + Canais
+                        </a>
+                    </li>
+                            </ul>
+            <!--<span class="clear"></span>-->
+        	</div>
+</div><div class="principal__header_inner" >
+	<header class="principal__header">
+			<a href="https://meuartigo.brasilescola.uol.com.br">
+			<img src="https://meuartigo.brasilescola.uol.com.br/assets/images/cabecalho/logo.png" class="principal__header-logo" alt="Meu Artigo Brasil Escola" title="Meu Artigo Brasil Escola" />
+		</a>
+	
+	<div class="principal__header-right">
+		<form class="principal__header-pesquisa" action="https://meuartigo.brasilescola.uol.com.br/busca/" method="GET">
+			<input type="text" name="q" placeholder="Procure no site" required="required">
+			<input type="submit" value="">
+		</form>
+
+		<div class="principal__header-login" id="container-login"></div>
+	</div>
+</div>
+</header>        <div class="box-social">
+    <div class="box-social__icons-box box-social__icons-box--options">
+        <div class="box-social__ico-options--share"></div>
+    </div>
+
+    <div class="box-social__blocos-compartilhaveis">
+        <div class="box-social__icons-box box-social__icons-box--twitter" data-title="Ensino de Gramática nas Escolas" data-url="https://meuartigo.brasilescola.uol.com.br/gramatica/ensino-gramatica-nas-escolas.htm">
+            <img class="box-social__ico-twitter" src="https://meuartigo.brasilescola.uol.com.br/assets/images/social-share/twitter_ico.svg"/>
+            <span class="box-social__twitter-title">Twitter</span>
+        </div>
+
+        <div class="box-social__icons-box box-social__icons-box--facebook" data-title="Ensino de Gramática nas Escolas" data-url="https://meuartigo.brasilescola.uol.com.br/gramatica/ensino-gramatica-nas-escolas.htm">
+            <img class="box-social__ico-facebook" src="https://meuartigo.brasilescola.uol.com.br/assets/images/social-share/facebook_ico.svg"/>
+            <span class="box-social__facebook-title">Facebook</span>
+        </div>
+
+        <div class="box-social__icons-box box-social__icons-box--whatsapp" data-title="Ensino de Gramática nas Escolas" data-url="https://meuartigo.brasilescola.uol.com.br/gramatica/ensino-gramatica-nas-escolas.htm">
+            <img class="box-social__ico-whatsapp" src="https://meuartigo.brasilescola.uol.com.br/assets/images/social-share/whatsapp_ico.svg"/>
+            <span class="box-social__whatsapp-title">Whatsapp</span>
+        </div>
+        <div class="box-social__icons-box box-social__icons-box--url">
+            <img class="box-social__ico-url" src="https://meuartigo.brasilescola.uol.com.br/assets/images/social-share/url_ico.svg"/>
+            <input type="text" class="box-social__url" name="urlencurtada" value="https://brasilesco.la/me10956"/>
+        </div>
+    </div>
+</div>
+        <div class="conteudo">
+            <div class="conteudo-principal">
+                <div class="menu">
+    <ul>
+                    <li class="menu__item">
+                <a class="menu__link" href="#"  >
+                    Exatas
+                </a>
+
+                                    <div class="menu__dropdown-box">
+                        <ul class="menu__dropdown-itens menu__dropdown-itens--full">
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://meuartigo.brasilescola.uol.com.br/economia-financas/">Economia e Finanças</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://meuartigo.brasilescola.uol.com.br/informatica/">Informática</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://meuartigo.brasilescola.uol.com.br/fisica/">Física</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://meuartigo.brasilescola.uol.com.br/matematica/">Matemática</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://meuartigo.brasilescola.uol.com.br/quimica/">Química</a>
+                                </li>
+                                                            
+                                                    </ul>
+                        <!--<span class="clear"></span>-->
+                    </div>
+                            </li>
+                    <li class="menu__item">
+                <a class="menu__link" href=""  >
+                    Humanas
+                </a>
+
+                                    <div class="menu__dropdown-box">
+                        <ul class="menu__dropdown-itens menu__dropdown-itens--full">
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://meuartigo.brasilescola.uol.com.br/atualidades/">Atualidades</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://meuartigo.brasilescola.uol.com.br/administracao/">Administração</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://meuartigo.brasilescola.uol.com.br/artes/">Artes</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://meuartigo.brasilescola.uol.com.br/brasil/">Brasil</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://meuartigo.brasilescola.uol.com.br/direito/">Direito</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://meuartigo.brasilescola.uol.com.br/educacao/">Educação</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://meuartigo.brasilescola.uol.com.br/filosofia/">Filosofia</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://meuartigo.brasilescola.uol.com.br/geografia/">Geografia</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://meuartigo.brasilescola.uol.com.br/gramatica/">Gramática</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://meuartigo.brasilescola.uol.com.br/historia/">História</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://meuartigo.brasilescola.uol.com.br/literatura/">Literatura</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://meuartigo.brasilescola.uol.com.br/pedagogia/">Pedagogia</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://meuartigo.brasilescola.uol.com.br/poemas-poesias/">Poemas e Poesias</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://meuartigo.brasilescola.uol.com.br/politica/">Política</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://meuartigo.brasilescola.uol.com.br/psicologia/">Psicologia</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://meuartigo.brasilescola.uol.com.br/religiao/">Religião</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://meuartigo.brasilescola.uol.com.br/sociologia/">Sociologia</a>
+                                </li>
+                                                            
+                                                    </ul>
+                        <!--<span class="clear"></span>-->
+                    </div>
+                            </li>
+                    <li class="menu__item">
+                <a class="menu__link" href="#"  >
+                    Biológicas
+                </a>
+
+                                    <div class="menu__dropdown-box">
+                        <ul class="menu__dropdown-itens menu__dropdown-itens--full">
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://meuartigo.brasilescola.uol.com.br/biologia/">Biologia</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://meuartigo.brasilescola.uol.com.br/doencas-saude/">Doenças e Saúde</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://meuartigo.brasilescola.uol.com.br/educacao-fisica/">Educação Física</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://meuartigo.brasilescola.uol.com.br/saude/">Saúde</a>
+                                </li>
+                                                            
+                                                    </ul>
+                        <!--<span class="clear"></span>-->
+                    </div>
+                            </li>
+                    <li class="menu__item">
+                <a class="menu__link" href="https://educador.brasilescola.uol.com.br/"  >
+                    Educador
+                </a>
+
+                                    <div class="menu__dropdown-box">
+                        <ul class="menu__dropdown-itens menu__dropdown-itens--full">
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://educador.brasilescola.uol.com.br/estrategias-ensino/">Estratégias de Ensino</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://educador.brasilescola.uol.com.br/orientacao-escolar/">Orientação Escolar</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://educador.brasilescola.uol.com.br/orientacao-escolar/orientacoes-para-pais.htm">Orientações para pais ou responsáveis</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://educador.brasilescola.uol.com.br/sugestoes-pais-professores/">Sugestões para pais e professores</a>
+                                </li>
+                                                            
+                                                    </ul>
+                        <!--<span class="clear"></span>-->
+                    </div>
+                            </li>
+                    <li class="menu__item">
+                <a class="menu__link" href="https://vestibular.brasilescola.uol.com.br/"  >
+                    Vestibular
+                </a>
+
+                                    <div class="menu__dropdown-box">
+                        <ul class="menu__dropdown-itens menu__dropdown-itens--full">
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://vestibular.brasilescola.uol.com.br/atualidades/">Atualidades</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://vestibular.brasilescola.uol.com.br/aprovados/">Aprovados</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://vestibular.brasilescola.uol.com.br/banco-de-redacoes/">Banco de Redações</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://vestibular.brasilescola.uol.com.br/blog/">Blog da Redação</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://vestibular.brasilescola.uol.com.br/enem/">Enem</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://vestibular.brasilescola.uol.com.br/noticias/">Notícias</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://vestibular.brasilescola.uol.com.br/profissoes-futuro/">Profissões do Futuro</a>
+                                </li>
+                                                            
+                                                    </ul>
+                        <!--<span class="clear"></span>-->
+                    </div>
+                            </li>
+                    <li class="menu__item">
+                <a class="menu__link" href="https://brasilescola.uol.com.br/"  >
+                    Brasil Escola
+                </a>
+
+                                    <div class="menu__dropdown-box">
+                        <ul class="menu__dropdown-itens menu__dropdown-itens--full">
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://brasilescola.uol.com.br/biologia/">Biologia</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://brasilescola.uol.com.br/fisica/">Física</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://brasilescola.uol.com.br/geografia">Geografia</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://brasilescola.uol.com.br/brasil/">Geografia do Brasil</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://brasilescola.uol.com.br/gramatica/">Gramática</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://brasilescola.uol.com.br/historia-da-america/">História da América</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://brasilescola.uol.com.br/historiab/">História do Brasil</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://brasilescola.uol.com.br/historiag/">História Geral</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://brasilescola.uol.com.br/literatura/">Literatura</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://brasilescola.uol.com.br/matematica/">Matemática</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://brasilescola.uol.com.br/quimica/">Química</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link"   href="https://brasilescola.uol.com.br/redacao/"> Redação</a>
+                                </li>
+                                                            
+                                                    </ul>
+                        <!--<span class="clear"></span>-->
+                    </div>
+                            </li>
+            </ul>
+    <!--<span class="clear"></span>-->
+</div>
+
+
+    <div class="container-publicidade-cima">
+        <!-- 1. Topo - 728x90, 970x250, 970x90 -->
+        <div class="publicidade-cima">
+            <div class="box-publicidade-topo">
+                <!-- 728x90 - 1 - UOL AD --><div id="banner-728x90-area">
+<script>window.uolads && window.uolads.push({ id: "banner-728x90-area" });</script>
+</div>
+            </div>
+        </div>
+    </div>
+
+                <div class="bloco" id="conteudo-principal-h">
+                    <div class="grid-1">
+                        <!--breadcrumbs-->
+<div id="breadcrumbs">
+    <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a itemtype="https://schema.org/Thing" itemprop="item" href="https://meuartigo.brasilescola.uol.com.br">
+            <span itemprop="name">Home</span></a>
+            <meta itemprop="position" content="1" />
+        </li>
+
+                                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                                <a itemtype="https://schema.org/Thing" itemprop="item" href="https://meuartigo.brasilescola.uol.com.br/gramatica">
+                                    <span itemprop="name">Gramática</span>
+                    <meta itemprop="position" content="2" />
+                </a>
+            </li>
+                                            <li class="pag-selecionada">
+                <span>Ensino de Gramática nas Escolas</span>
+            </li>
+                        </ol>
+</div>
+                        <div class="fonte f-direita noselect">
+                            <a href="https://meuartigo.brasilescola.uol.com.br/imprimir/10956" class="imprimir">Imprimir</a><span>Texto</span><a class="a-menos">-A</a><a class="a-mais">+A</a>
+                        </div>
+                        <span class="clear"></span>
+
+                        <div class="conteudo-pagina">
+                            <div class="br-grid-2" style="width: 900px; float: none; display: inline-block;">
+                                <h1>
+                                    Ensino de Gramática nas Escolas
+                                </h1>
+                                <h3 class="meuartigo-page artigo-header-aumento">
+                                    Gramática
+                                </h3>
+                                <span class="definicao">
+                                    Ensino de gramática nas aulas de língua portuguesa, ensino de língua portuguesa nas escolas, como o professor de lingua portugues deve proceder,...
+                                </span>
+
+
+                                <div class="conteudo-materia">
+                                    <div class="indice" style="width: 100%;">
+
+                                        
+                                        <div class="conteudo-indice" style="width: 100%;">
+                                                                                            <div class="publicidade-content f-esquerda">
+                                                    <div style='height:250px; width:300px;'><!-- 300x250 - 1 - UOL AD --><div id="banner-300x250-area"><script>window.uolads && window.uolads.push({ id: "banner-300x250-area" });</script></div></div>
+                                                </div>
+                                                                                           
+                                            <div><p align="justify">Autoras: Michele de Jesus P. Tolentino </p>
+<p align="justify">Vanessa Assis Lima. </p>
+<p align="justify">Orientadora: Marli Vieira Lins. </p>
+<p align="justify">Faculdade Evang&eacute;lica de Bras&iacute;lia. </p>
+<p align="justify"><em>Resumo </em></p>
+<p align="justify"><em>Palavras-Chave </em></p>
+<p align="justify"><em>Muito se tem questionado a respeito do ensino de gram&aacute;tica nas aulas de l&iacute;ngua portuguesa, afinal a gram&aacute;tica deve ou n&atilde;o ser ensinada? Diante de uma nova metodologia, como seria a rea&ccedil;&atilde;o de professores e alunos? </em></p>
+<p align="justify"><em>Em vista disso, surge tamb&eacute;m outro questionamento, a cerca do ensino de l&iacute;ngua portuguesa nas escolas, pois ao educador compete o ensino da gram&aacute;tica normativa para o cumprimento dos Par&acirc;metros Curriculares Nacionais, os quais servem de refer&ecirc;ncia para o trabalho de todas as disciplinas nos tr&ecirc;s n&iacute;veis para a forma&ccedil;&atilde;o escolar dos discentes. Observa-se uma grande dificuldade em rela&ccedil;&atilde;o &agrave; aprendizagem, por parte desses, de acordo com a norma culta imposta devido &agrave; cultura dos estudantes que, muitas vezes, &eacute; incompat&iacute;vel levando os mesmos a conclu&iacute;rem a vida escolar sem saberem ler e escrever adequadamente. </em></p>
+<p align="justify"><em>C&ocirc;nscio dessa realidade, o professor de l&iacute;ngua portuguesa, dever&aacute; dedicar-se em adotar novos recursos did&aacute;ticos, a fim de garantir um ensino eficaz que leve o aluno a ter verdadeiramente uma aprendizagem significativa. </em></p>
+<p align="justify"><em>N&atilde;o h&aacute; d&uacute;vida de que deve ensinar a gram&aacute;tica normativa nas aulas de l&iacute;ngua portuguesa, embora sabe-se perfeitamente que ela em si n&atilde;o ensina ningu&eacute;m a falar, ler e escrever com precis&atilde;o (Antunes, 2007 p. 53). O dever da escola &eacute; ensin&aacute;-la oferecendo condi&ccedil;&otilde;es ao aluno de adquirir compet&ecirc;ncia para us&aacute;-la de acordo com a situa&ccedil;&atilde;o vivenciada. N&atilde;o &eacute; com teoria gramatical que ela concretizar&aacute; o seu objetivo, pois isto leva os estudantes ao desinteresse pelo estudo da l&iacute;ngua, por n&atilde;o terem condi&ccedil;&otilde;es de entender o conte&uacute;do ministrado em sala de aula, resultando assim frustra&ccedil;&otilde;es, reprova&ccedil;&otilde;es e recrimina&ccedil;&otilde;es que iniciam pela pr&oacute;pria escola e o preconceito ling&uuml;&iacute;stico. </em></p>
+<p align="justify"><em>&Eacute; importante enfatizar que a assimila&ccedil;&atilde;o cr&iacute;tica dos estudos ling&uuml;&iacute;sticos e a necessidade de se estabelecer um maior contato do professor com a l&iacute;ngua materna e a proposta da ling&uuml;&iacute;stica; valorizar a l&iacute;ngua falada pelo aluno. Considerando que a gram&aacute;tica n&atilde;o deve ser tida como uma verdade &uacute;nica, absoluta e acabada antes, por&eacute;m seus conceitos devem ser relativizados, para que alcance o educando do s&eacute;culo XXI. </em></p>
+<p align="justify"><em>(BAGNO, 2000 p. 87) opina que: "A gram&aacute;tica deve conter uma boa quantidade de atividades de pesquisa, que possibilitem ao aluno a produ&ccedil;&atilde;o de seu pr&oacute;prio conhecimento ling&uuml;&iacute;stico, como uma arma eficaz contra a reprodu&ccedil;&atilde;o irrefletida e acr&iacute;tica da doutrina gramatical normativa". </em></p>
+<p align="justify"><em>Atrav&eacute;s desse conceito, Bagno afirma que a gram&aacute;tica em si n&atilde;o justifica seu papel de &uacute;nica fonte para o ensino da l&iacute;ngua nas escolas, tanto do ponto de vista te&oacute;rico quanto do pr&aacute;tico, bem como o c&oacute;digo normativo da linguagem, tomado no geral. Os gram&aacute;ticos levam ao est&aacute;gio da ang&uacute;stia os professores e os alunos, para o estudo gramatical em virtude das diverg&ecirc;ncias entre os mesmos. Ent&atilde;o o professor deve deixar de lado o comodismo e a repeti&ccedil;&atilde;o da doutrina gramatical e ser mais din&acirc;mico ministrando o conte&uacute;do de forma reflexiva em atividades contextualizadas, interdisciplinares, individuais ou coletivas de forma que o aluno passa a conhecer as variedades da l&iacute;ngua atrav&eacute;s de pesquisas, as quais envolvam a leitura e produ&ccedil;&atilde;o textual, construindo seu pr&oacute;prio conhecimento ling&uuml;&iacute;stico. </em></p>
+<p align="justify"><em>O ensino de gram&aacute;tica nas escolas, acontece de forma arcaica, devido &agrave; aplica&ccedil;&atilde;o de m&eacute;todos totalmente te&oacute;ricos, sem nenhuma significa&ccedil;&atilde;o na vida dos alunos que, por sua vez, n&atilde;o conseguem estabelecer rela&ccedil;&atilde;o entre a teoria gramatical e a pr&aacute;tica de texto. </em></p>
+<blockquote dir="ltr" style="MARGIN-RIGHT: 0px"><blockquote dir="ltr" style="MARGIN-RIGHT: 0px"><blockquote dir="ltr" style="MARGIN-RIGHT: 0px"><blockquote dir="ltr" style="MARGIN-RIGHT: 0px"><blockquote dir="ltr" style="MARGIN-RIGHT: 0px"><blockquote dir="ltr" style="MARGIN-RIGHT: 0px"><blockquote dir="ltr" style="MARGIN-RIGHT: 0px"><blockquote dir="ltr" style="MARGIN-RIGHT: 0px"><blockquote dir="ltr" style="MARGIN-RIGHT: 0px"><blockquote dir="ltr" style="MARGIN-RIGHT: 0px"><blockquote dir="ltr" style="MARGIN-RIGHT: 0px">
+<p align="justify"><em>A concep&ccedil;&atilde;o de que l&iacute;ngua e gram&aacute;tica s&atilde;o uma coisa s&oacute; deriva do fato de, ingenuamente, se acreditar que a l&iacute;ngua constitu&iacute;da de um &uacute;nico componente: a gram&aacute;tica. Por essa &oacute;tica, saber uma l&iacute;ngua equivale a saber sua gram&aacute;tica; ou, por outro lado, saber a gram&aacute;tica de uma l&iacute;ngua equivale a dominar totalmente essa l&iacute;ngua. Na mesma linha de racioc&iacute;nio, consolida-se a cren&ccedil;a de que o estudo de uma l&iacute;ngua &eacute; o estudo de sua gram&aacute;tica (p.39). </em></p>
+<p align="justify"><em><strong>&Eacute; importante ressaltar que o ensino de gram&aacute;tica, n&atilde;o deve ocorrer apenas para proteger ou conservar a composi&ccedil;&atilde;o da l&iacute;ngua, mas para auxiliar o usu&aacute;rio e falante no conhecimento de sua pr&oacute;pria l&iacute;ngua materna, possibilitando-lhe as caracter&iacute;sticas essenciais que pertencem &agrave; sua cultura. Deve ser tamb&eacute;m, um ensino harmonioso na rela&ccedil;&atilde;o entre o ensino da gram&aacute;tica normativa e a contextualizada, sem descartar as nomenclaturas, terminologias e regras, as quais s&atilde;o fundamentais para o desenvolvimento social e cultural dos alunos. </strong></em></p>
+<p align="justify"><em><strong>Mediante a algumas situa&ccedil;&otilde;es ocorridas em sala de aula, relacionadas &agrave; aprendizagem, faz-se necess&aacute;rio algumas mudan&ccedil;as nos procedimentos adotados em rela&ccedil;&atilde;o ao ensino de l&iacute;ngua portuguesa, pois sabe-se que os alunos pertencem a diferentes culturas e devem ser atendidos de acordo com suas necessidades, baseando-se em suas possibilidades de leitura e escrita levando em considera&ccedil;&atilde;o o potencial gramatical que cada um tem ampliando, ou seja, enriquecendo o poder ling&uuml;&iacute;stico atrav&eacute;s do ensino da gram&aacute;tica que tem por objetivo preparar o aluno para uma produ&ccedil;&atilde;o textual obedecendo &agrave; norma padr&atilde;o. </strong></em></p>
+<p align="justify"><em><strong>Percebe-se que o ensino de l&iacute;ngua portuguesa perpassa por muitas dificuldades, n&atilde;o apenas com a forma de ensinar a gram&aacute;tica, como tamb&eacute;m a maneira que o professor atua em sua pr&aacute;tica, ou seja, al&eacute;m de fornecer aos alunos uma orienta&ccedil;&atilde;o v&aacute;lida para a pr&aacute;tica de produ&ccedil;&atilde;o de textos respaldadas pelas regras gramaticais, ent&atilde;o deve-se encontrar m&eacute;todos din&acirc;micos e eficientes ao transmitir o conte&uacute;do. N&atilde;o h&aacute; uma receita m&aacute;gica nem respostas milagrosas, o que deve ser feito s&atilde;o novas pr&aacute;ticas de ensino que v&atilde;o propiciar ao corpo discente uma aprendizagem significativa. </strong></em></p>
+<p align="justify"><em><strong>H&aacute; v&aacute;rias maneiras para que ocorra mudan&ccedil;as no ensino tradicional, uma delas &eacute; o professor tornar-se o mediador do conhecimento ao aluno, fragmentando a dist&acirc;ncia entre o mesmo e o ensino de gram&aacute;tica, tornando-a prazerosa e n&atilde;o somente obrigat&oacute;ria. Pois, ser&aacute; realmente um professor, independentemente do conhecimento que possua se puder transmitir tais informa&ccedil;&otilde;es de forma interativa e criativa, estabelecendo a rela&ccedil;&atilde;o professor-aluno, acreditando sempre que o aluno &eacute; capaz de aprender e compreender a gram&aacute;tica. O aluno somente interioriza o conhecimento da estrutura gramatical, se ela for contextualizada em situa&ccedil;&otilde;es ou contextos comunicativos. O professor poder&aacute; utilizar recursos metodol&oacute;gicos, bem como, tecnol&oacute;gicos como cartazes, textos de embalagens, revistas, jornais, oficinas, carta comercial e pessoal, bilhete, romance, hor&oacute;scopo, receita culin&aacute;ria, card&aacute;pio, outdoor, lista de compras, resenha, inqu&eacute;rito, edital de concurso, piada, carta eletr&ocirc;nica, bate-papo online, data show, dentre outros. &Eacute; importante despertar nos alunos a consci&ecirc;ncia da funcionalidade da leitura e escrita, e isso s&oacute; ser&aacute; poss&iacute;vel quando os professores levarem em conta a bagagem que o aluno traz consigo, a respeito de sua l&iacute;ngua materna. Dessa forma pode acontecer a uni&atilde;o da norma culta e da norma coloquial sem criar traumas ou defasagens na aprendizagem dos alunos, basta que os educadores busquem a forma&ccedil;&atilde;o continuada, n&atilde;o apenas te&oacute;rica, mas tamb&eacute;m na pr&aacute;tica e no contexto da realidade em que ele est&aacute; inserido, respeitando assim as diferen&ccedil;as. </strong></em></p>
+<p align="justify"><em><strong>Segundo VYGOTSKY (apud: <u>www.ufsm.br/linguagem_e_cidadania/02_03/Liane.htm. Acesso em: 22/10/2008) "O estudo da gram&aacute;tica &eacute; de grande import&acirc;ncia para o desenvolvimento mental da crian&ccedil;a". A crian&ccedil;a, embora domine a gram&aacute;tica de sua l&iacute;ngua muito antes de entrar na escola, pois organiza sua fala de acordo com a necessidade, esse dom&iacute;nio &eacute; inconsciente, ou seja, mesmo usando o tempo verbal correto ao se expressar, n&atilde;o saber&aacute; rejeitar uma palavra quando isso lhe for solicitado. Em vista disso, o ensino de gram&aacute;tica torna-se v&aacute;lido n&atilde;o s&oacute; porque permite &agrave; crian&ccedil;a de estar consciente do que est&aacute; fazendo, mas pode usar essas habilidades de forma precisa, al&eacute;m de permitir o uso da fala com maior efic&aacute;cia. </u></strong></em></p><div class='pub_insert_content_titulo'>Não pare agora... Tem mais depois da publicidade ;)</div><div class='pub_insert_content'><div style='margin: auto; width: 300px;'><div style='height:250px; width:300px;'><!-- 300x250 - 2 - UOL AD --><div id="banner-300x250-2-area"><script>window.uolads && window.uolads.push({ id: "banner-300x250-2-area" });</script></div></div></div></div>
+<p align="justify"><em><strong>O ensino de gram&aacute;tica deve-se iniciar nos primeiros anos de escolaridade, pois a crian&ccedil;a desenvolve seu pensamento a partir das descobertas que vai surgindo pelos conte&uacute;dos aplicados sem sala de aula, os quais contribuem para o desenvolvimento da fala e escrita. A partir dessas descobertas conclui-se que todas as mat&eacute;rias b&aacute;sicas s&atilde;o estimuladas pelo psicol&oacute;gico ao longo de um processo ensino-aprendizagem. Isso ocorre de forma lenta, interativa, coletiva e contextualizada. </strong></em></p>
+<p align="justify"><em><strong>Ao ensinar a gram&aacute;tica, o professor deve levar em considera&ccedil;&atilde;o algumas quest&otilde;es como: o estudo coletivo, a coopera&ccedil;&atilde;o e a competi&ccedil;&atilde;o, os quais podem ajudar na aprendizagem no sentido de que as crian&ccedil;as com facilidade colaboram com as demais, tamb&eacute;m pode haver uma competi&ccedil;&atilde;o entre grupos, de forma em que um seja avaliado por outros, recebendo sugest&otilde;es e reflex&otilde;es para o pr&oacute;prio amadurecimento. </strong></em></p>
+<p align="justify"><em><strong>O ensino de gram&aacute;tica &eacute; importante tanto na escrita quanto na fala, at&eacute; porque n&oacute;s estamos inseridos em uma sociedade contempor&acirc;nea, na qual nossa aprendizagem &eacute; medida para ingressarmos no mercado de trabalho por meio de concursos p&uacute;blicos que exigem dos concorrentes uma gram&aacute;tica contextualizada, que depende das regras da gram&aacute;tica normativa. As provas s&atilde;o elaboradas baseadas nos curr&iacute;culos escolares com propostas pedag&oacute;gicas, onde a gram&aacute;tica normativa est&aacute; inserida. Neste caso o aluno deve conhecer a estrutura, os usos e o funcionamento de uma l&iacute;ngua nos seus diversos n&iacute;veis: fonol&oacute;gico, morfol&oacute;gico, lexical e sem&acirc;ntico. O professor de l&iacute;ngua materna desde a alfabetiza&ccedil;&atilde;o at&eacute; o &uacute;ltimo ano escolar deve estar atento a estas informa&ccedil;&otilde;es realizando sua tarefa de educador com precis&atilde;o e compet&ecirc;ncia. </strong></em></p>
+<p align="justify"><em><strong>Diante do exposto, segue sugest&atilde;o a ser trabalhada no ensino de l&iacute;ngua portuguesa dentro da sala de aula, que poder&aacute; ser adaptada. O professor poder&aacute; trabalhar diversas &aacute;reas do conte&uacute;do de l&iacute;ngua portuguesa, como por exemplo, gram&aacute;tica, produ&ccedil;&atilde;o textual, e leitura de forma contextualizada e din&acirc;mica. A fun&ccedil;&atilde;o de jogos e aulas din&acirc;micas &eacute; exatamente para que o professor construa ferramentas, para que o aluno, atrav&eacute;s dessas aulas, construa sua vis&atilde;o de mundo. </strong></em></p>
+<p align="justify"><em><strong>O jogo chamado: "Produ&ccedil;&atilde;o textual a partir da hist&oacute;ria: A Bela e a Fera", lembrando que o professor poder&aacute; adapt&aacute;-lo e usar outras hist&oacute;rias, por exemplo: A pequena sereia; Rapunzel; Chapeuzinho vermelho; Pin&oacute;quio, dentre outras. A hist&oacute;ria dever&aacute; conter figuras, ilustrando os momentos, e o texto original, os quais est&atilde;o anexos. </strong></em></p>
+<p align="justify"><em><strong>As regras do jogo dever&atilde;o ser explicadas de modo que a turma compreenda, que s&atilde;o: O professor far&aacute; um breve coment&aacute;rio sobre a hist&oacute;ria, colhendo os conhecimentos pr&eacute;vios dos alunos; Ent&atilde;o divide-se a turma em grupos, sendo que a quantidade de grupos fica a crit&eacute;rio do professor, podendo ser desde quatro grupos, caso a turma seje pequena, ou em maior quantidade de grupos, caso a turma contenha um n&uacute;mero grande de alunos, de modo que todos participem; Em seguida, distribue-se a hist&oacute;ria que estar&aacute; recortada em figuras para que os alunos coloquem-as em sequ&ecirc;ncia; Durante a montagem, o professor acompanhar&aacute;, se a ordem da hist&oacute;ria estiver correta, tudo bem, se n&atilde;o, o professor orientar&aacute; os grupos at&eacute; que eles consigam organiz&aacute;-las de forma correta, n&atilde;o falando que est&aacute; incorreto e sim dando pistas, instigando o aluno a refletir sobre o que foi dito durante a exposi&ccedil;&atilde;o inicial do professor; Montada a historinha, o professor pedir&aacute; que os alunos leiam o texto original da historinha e, em seguida, que cada um crie sua pr&oacute;pria hist&oacute;ria, podendo mud&aacute;-la, e, finalmente, na pr&oacute;xima aula o professor colocar&aacute; o v&iacute;deo da hist&oacute;ria. </strong></em></p>
+<p align="justify"><em><strong>Os conhecimentos na &aacute;rea da ling&uuml;&iacute;stica ocorrem durante todo o processo escolar, pois o ensino gramatical se repete em todos os anos escolares, numa pr&aacute;tica di&aacute;ria em sala de aula, numa intera&ccedil;&atilde;o formal e contextualizada, na oralidade e na escrita. </strong></em></p>
+<p align="justify"><em><strong>Nesse contexto, pode-se afirmar que o ensino da gram&aacute;tica &eacute; importante, pois a mesma oferece condi&ccedil;&otilde;es para o aluno ampliar seu discurso ling&uuml;&iacute;stico em rela&ccedil;&atilde;o ao funcionamento da l&iacute;ngua padr&atilde;o, atrav&eacute;s do conhecimento de regras gramaticais trabalhadas em atividades aplicadas pelos professores que demonstram as variedades ling&uuml;&iacute;sticas levando o aluno a entender a estrutura, o uso e o funcionamento da l&iacute;ngua materna. </strong></em></p>
+<p align="justify"><em><strong>Para a produ&ccedil;&atilde;o textual &eacute; importante primeiramente, que o aluno tenha ampla vis&atilde;o de mundo, caso essa n&atilde;o seja a realidade do mesmo, &eacute; imprescind&iacute;vel que o professor aborde o assunto determinado em sala de aula, atrav&eacute;s de debates e pesquisas, para que o aluno construa seu pr&oacute;prio conhecimento de forma cr&iacute;tica e reflexiva. A partir de ent&atilde;o, aplica-se o conhecimento das normas gramaticais, que ajudar&aacute; ao aluno na estrutura&ccedil;&atilde;o de seu texto, pois para escrever bem &eacute; necess&aacute;rio o uso adequado das palavras que d&atilde;o uma seq&uuml;&ecirc;ncia l&oacute;gica e coesa ao texto. </strong></em></p>
+<p align="justify"><em><strong>O que falta no ensino da gram&aacute;tica, de acordo com a did&aacute;tica &eacute; a aplicabilidade, pois quando aprende-se algo que serve de uso em nossas vidas, certamente ficar&aacute; guardado dentro de n&oacute;s, de maneira tal que n&atilde;o esqueceremos. Acredita-se que h&aacute; possibilidade da gram&aacute;tica condizer com a nossa realidade, utilizando a pr&oacute;pria fala dos alunos para por isso em pr&aacute;tica, por exemplo, quando um aluno expressa algo comum na fala de sua comunidade como os regionalismos e os neologismos, pode-se aproveitar a oportunidade e intervir nessa fala, mostrando que, muitas vezes, h&aacute; v&aacute;rias formas de dizer a mesma palavra, que a Ling&uuml;&iacute;stica explica todas essas varia&ccedil;&otilde;es e posteriormente demonstrar como a gram&aacute;tica normativa usa essa palavra. Outro ponto que falta no ensino de gram&aacute;tica &eacute; acabar com certas "decorebas", muitas vezes, aprende na escola que os verbos: ser, estar, continuar, parecer, permanecer, dentro outros, sempre ser&atilde;o verbos de liga&ccedil;&atilde;o, e ao chegar &agrave; faculdade leva-se um choque ao se deparar que depende do contexto do texto ou da frase para esse verbo ser realmente de liga&ccedil;&atilde;o. </strong></em></p>
+<p align="justify"><em><strong>Sabe-se que ser professor &eacute; uma profiss&atilde;o important&iacute;ssima e mesmo com tantos problemas encarados por estes profissionais, &eacute; poss&iacute;vel ainda sonhar em mudar o ensino da nossa l&iacute;ngua de uma forma a que todos venham aprender e a valoriz&aacute;-la, n&atilde;o &eacute; um caminho f&aacute;cil, n&atilde;o obstante tamb&eacute;m n&atilde;o &eacute; imposs&iacute;vel, mas falta aplicar &agrave; pr&aacute;tica o que nossa professora comenta em muitas de nossas aulas de Gram&aacute;tica, Descri&ccedil;&atilde;o e Uso: est&aacute; na hora de arrega&ccedil;armos as mangas em prol de um ensino de qualidade. </strong></em></p>
+<p align="justify"><em><strong>Refer&ecirc;ncias </strong></em></p>
+<p align="justify"><em><strong>ANTUNES, Maria Irand&eacute; Costa Moraes. Muito al&eacute;m da gram&aacute;tica: por um ensino de gram&aacute;tica sem pedra no caminho. S&atilde;o Paulo, Ed. Par&aacute;bola, 2007. </strong></em></p>
+<p align="justify"><em><strong>http:// www.ufsm.br/linguagem_e_cidadania/02_03/Liane.htm. Acesso em: 22/10/2008) </strong></em></p>
+<p align="justify"><em><strong>BAGNO, Marcos. Dram&aacute;tica da L&iacute;ngua Portuguesa. S&atilde;o Paulo, Ed. Loyola, 2000. </strong></em></p>
+<p align="justify"><em>A partir desse conceito, n&atilde;o existe rela&ccedil;&atilde;o entre a teoria gramatical e a pr&aacute;tica de texto, porque para muitos estudar a l&iacute;ngua se generaliza em estudar a gram&aacute;tica normativa. Por isso, existem tantas dificuldades nos alunos em elaborar um texto, pois a gram&aacute;tica &eacute; estudada de forma separada, isto &eacute;, n&atilde;o entra em consenso com as outras intera&ccedil;&otilde;es da l&iacute;ngua, como a pr&oacute;pria pr&aacute;tica de produ&ccedil;&atilde;o textual, leitura, dentre outros. Para que haja um ensino de qualidade, faz-se necess&aacute;rio que o estudo da gram&aacute;tica v&aacute; de encontro &agrave; vida do aluno, a isto conceitua-se aplicabilidade. </em></p>
+</blockquote></blockquote></blockquote></blockquote></blockquote></blockquote></blockquote></blockquote></blockquote></blockquote></blockquote>
+<p align="justify"><em>Segundo Antunes (2007):: gram&aacute;tica, escola, ensino, metodologia, reflex&atilde;o.: O principal objetivo desse artigo &eacute; estabelecer uma reflex&atilde;o a cerca do ensino de gram&aacute;tica nas escolas, diante de uma nova metodologia adotada pelo professor, a fim de proporcionar aos discentes um ensino eficaz. Visto que o ensino da gram&aacute;tica depende da rela&ccedil;&atilde;o professo-aluno, da forma&ccedil;&atilde;o te&oacute;rica e pr&aacute;tica de sala de aula.</em></p></div>
+ 
+                                            <br />
+                                            <p>Publicado por: Michele Tolentino</p>
+
+                                            <div style="background-color: #e8edf0;  border-radius: 5px; padding: 5px;">
+                                                <span>O texto publicado foi encaminhado por um usuário do site por meio do canal colaborativo Meu Artigo. O Brasil Escola não se responsabiliza pelo conteúdo do artigo publicado, que é de total responsabilidade do autor. Para acessar os textos produzidos pelo site, acesse: <a href="http://www.brasilescola.com" target="_blank">http://www.brasilescola.com</a>.</span>
+                                            </div>
+                                        </div>
+
+                                        <span class="clear"></span>
+                                
+                                                                            </div>
+
+                                    <!-- Native 3x3 -->
+                                    <div id="bloco-native-rodape"></div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <span class="clear"></span>
+                    </div>
+
+                    <div class="grid-2" style="margin-top: 40px; overflow: inherit;">
+                        <div class="mais-avaliadas">
+        <div class="mais-avaliadas-banner">
+            <span class="mais-avaliadas-estrela"></span>
+            <h2>
+                Mais Avaliados
+            </h2>
+            <span class="clear"></span>
+        </div>
+        <ul>
+                            <li>
+                    <span>
+                        1º
+                    </span>
+                    <a href="https://meuartigo.brasilescola.uol.com.br/doencas-saude/cancer.htm">
+                        Câncer
+                    </a>
+                </li>
+                            <li>
+                    <span>
+                        2º
+                    </span>
+                    <a href="https://meuartigo.brasilescola.uol.com.br/geografia/biodiesel.htm">
+                        Biodiesel
+                    </a>
+                </li>
+                            <li>
+                    <span>
+                        3º
+                    </span>
+                    <a href="https://meuartigo.brasilescola.uol.com.br/doencas-saude/alzheimer.htm">
+                        Alzheimer
+                    </a>
+                </li>
+                            <li>
+                    <span>
+                        4º
+                    </span>
+                    <a href="https://meuartigo.brasilescola.uol.com.br/religiao/esoterismo-1.htm">
+                        Esoterismo
+                    </a>
+                </li>
+                            <li>
+                    <span>
+                        5º
+                    </span>
+                    <a href="https://meuartigo.brasilescola.uol.com.br/historia-geral/mesopotamia.htm">
+                        Mesopotâmia
+                    </a>
+                </li>
+                    </ul>
+        <span class="clear"></span>
+    </div>
+
+<span class="clear"></span>
+
+<div id="left-block-floating">
+    <div style="height: 406px">  
+        <!-- NATIVE -->
+        <div style="height: 406px;">             <div class="tm-ads" id="banner-native-lateral-1-area">
+            <script>window.uolads && window.uolads.push({ id: "banner-native-lateral-1-area" });</script> </div>
+
+            <div class="tm-ads" id="banner-native-lateral-2-area">
+            <script>window.uolads && window.uolads.push({ id: "banner-native-lateral-2-area" });</script> </div>
+        </div>
+    </div>
+
+    <div id="box_dir_social" style="margin: 10px 0 10px 0;">
+    <ul>
+        <li><a href="https://www.facebook.com/brasilescola" target="_blank" title="Facebook"></a></li>
+        <li><a href="https://www.instagram.com/brasilescolaoficial/" target="_blank" title="Instagram"></a></li>
+        <li><a href="https://twitter.com/brasilescola" target="_blank" title="Twitter"></a></li>
+        <li><a href="https://www.youtube.com/brasilescola" target="_blank" title="YouTube"></a></li>
+        <li><a href="https://meuartigo.brasilescola.uol.com.br/rss" title="rss"></a></li>
+    </ul>
+</div>
+            <div id="area-flutuante-artigo-1" style="min-height: 600px;">
+            <div id="pub-flutuante-artigo-1" style="width: 300px; height: 600px;">
+                <div class="publicidade-lateral">
+                    <div style='width:300px; height:600px;'><!-- 300x600 - 1 - UOL AD --><div id="banner-300x600-area"><script>window.uolads && window.uolads.push({ id: "banner-300x600-area" });</script></div></div>
+                </div>
+            </div>
+        </div>
+    </div>                    </div>
+                    <span class="clear"></span>
+                </div>
+                <span class="clear"></span>
+            </div>
+            <span class="clear"></span>
+        </div>
+
+        <script>
+            var page = 'artigo';
+        </script>
+
+        <div class="rodape">
+    <div class="itens-rodape">
+        <div class="centro">
+            <div class="itens-rodape__links">
+                <ul>
+                    <li class="itens-rodape__item">
+                        <a class="itens-rodape__link" href="https://www.redeomnia.com/quem-somos/" title="Sobre Nós" target="_blank">
+                            Quem somos
+                        </a>
+                    </li>
+
+                    <li class="itens-rodape__item">
+                        <a class="itens-rodape__link" href="https://www.redeomnia.com/portfolios/brasil-escola/" title="Anuncie" target="_blank">
+                            Anuncie no Brasil Escola
+                        </a>
+                    </li>
+
+                    <li class="itens-rodape__item">
+                        <a class="itens-rodape__link" href="https://www.redeomnia.com/quem-somos/" title="Expediente" target="_blank">
+                            Expediente
+                        </a>
+                    </li>
+
+                    <li class="itens-rodape__item">
+                        <a class="itens-rodape__link" href="https://brasilescola.uol.com.br/politica-de-privacidade" title="Política de Privacidade" target="_blank">
+                            Política de Privacidade
+                        </a>
+                    </li>
+
+                    <li class="itens-rodape__item">
+                        <a class="itens-rodape__link" href="https://brasilescola.uol.com.br/termos-de-uso" title="Termos de Uso" target="_blank">
+                            Termos de Uso
+                        </a>
+                    </li>
+
+                    <li class="itens-rodape__item">
+                        <a class="itens-rodape__link" href="https://brasilescola.uol.com.br/contato" title="Fale Conosco" target="_blank">
+                            Fale Conosco
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="itens-rodape__social">
+                <ul>
+                    <li class="itens-rodape__social-item">SIGA O <b>BRASIL ESCOLA</b></li>
+
+                    <li class="itens-rodape__social-item">
+                        <a class="itens-rodape__social-facebook" href="https://www.facebook.com/brasilescola" target="_blank"></a>
+                    </li>
+
+                    <li class="itens-rodape__social-item">
+                        <a class="itens-rodape__social-twitter" href="https://twitter.com/brasilescola" target="_blank"></a>
+                    </li>
+
+                    <li class="itens-rodape__social-item">
+                        <a class="itens-rodape__social-youtube" href="https://www.youtube.com/brasilescola" target="_blank"></a>
+                    </li>
+
+                    <li class="itens-rodape__social-item">
+                        <a class="itens-rodape__social-rss" href="https://meuartigo.brasilescola.uol.com.br/rss" target="_blank"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-rodape">
+        <div class="centro">
+            <div class="menu-rodape__logo">
+                <a href="https://brasilescola.uol.com.br">
+                    <img src="https://meuartigo.brasilescola.uol.com.br/assets/images/cabecalho/brasil-escola-logo.png" alt="Brasil Escola" title="Brasil Escola">
+                </a>
+            </div>
+
+            <ul class="menu-rodape__itens">
+                <li class="menu-rodape__item menu-rodape__item--biologianet">
+                    <a class="menu-rodape__link menu-rodape__link--biologianet" href="https://www.biologianet.com" target="_blank" title="Biologia Net">
+                        Biologia Net
+                    </a>
+                </li>
+                
+                <li class="menu-rodape__item menu-rodape__item--escolakids">
+                    <a class="menu-rodape__link menu-rodape__link--escolakids" href="https://escolakids.uol.com.br" target="_blank" title="Escola Kids">
+                        Escola Kids
+                    </a>
+                </li>
+                
+                <li class="menu-rodape__item menu-rodape__item--exerciciosme">
+                    <a class="menu-rodape__link menu-rodape__link--exerciciosme" href="https://exercicios.mundoeducacao.uol.com.br" target="_blank" title="Exercícios Mundo Educação">
+                        Exercícios Mundo <br/> Educação
+                    </a>
+                </li>
+                
+                <li class="menu-rodape__item menu-rodape__item--historiadomundo">
+                    <a class="menu-rodape__link menu-rodape__link--historiadomundo" href="https://www.historiadomundo.com.br" target="_blank" title="História do Mundo">
+                        História do <br/> Mundo
+                    </a>
+                </li>
+                
+                <li class="menu-rodape__item menu-rodape__item--manualdaquimica">
+                    <a class="menu-rodape__link menu-rodape__link--manualdaquimica" href="https://www.manualdaquimica.com" target="_blank" title="Manual da Química">
+                        Manual da <br/> Química
+                    </a>
+                </li>
+                
+                <li class="menu-rodape__item menu-rodape__item--me">
+                    <a class="menu-rodape__link menu-rodape__link--me" href="https://mundoeducacao.uol.com.br" target="_blank" title="Mundo Educação">
+                        Mundo Educação
+                    </a>
+                </li>
+
+                <li class="menu-rodape__item menu-rodape__item--alunosonline">
+                    <a class="menu-rodape__link menu-rodape__link--alunosonline" href="https://www.preparaenem.com" target="_blank" title="PrePara ENEM">
+                        PrePara ENEM
+                    </a>
+                </li>
+                
+                <li class="menu-rodape__item menu-rodape__item--portugues">
+                    <a class="menu-rodape__link menu-rodape__link--portugues" href="https://www.portugues.com.br" target="_blank" title="Português">
+                        Português
+                    </a>
+                </li>
+                
+                <li class="menu-rodape__item menu-rodape__item--vestibularme">
+                    <a class="menu-rodape__link menu-rodape__link--vestibularme" href="//vestibular.mundoeducacao.uol.com.br" target="_blank" title="Vestibular Mundo Educação">
+                        Vestibular Mundo <br/> Educação
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="site-info">
+        <div class="centro">
+            <div class="site-info__logo">
+                <a href="https://meuartigo.brasilescola.uol.com.br">
+                    <img src="https://meuartigo.brasilescola.uol.com.br/assets/images/logo-rodape.png?v=1" alt="Meu Artigo- Brasil Escola" title="Meu Artigo - Brasil Escola">
+                </a>
+            </div>
+            
+            <div class="site-info__copyright">
+                Resolução mínima de 1024x768. Copyright © 2021 Rede Omnia - Todos os direitos reservados<br>
+                Proibida a reprodução total ou parcial sem prévia autorização (Inciso I do Artigo 29 Lei 9.610/98)
+            </div>
+
+            <div class="site-info__pilha">
+                <a href="http://www.pilhadigital.com.br" rel="noindex, nofollow" target="_blank">
+                    <img src="https://meuartigo.brasilescola.uol.com.br/assets/images/icons/assinatura_pilha.png?v=1)" alt="Pilha" title="Pilha">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="player_dynad_tv"></div>
+
+<!-- JS -->
+<script type="text/javascript" src="https://meuartigo.brasilescola.uol.com.br/assets/js/lib.min.js?v=1615563286"></script>
+
+
+<script type="text/javascript" async src="https://meuartigo.brasilescola.uol.com.br/assets/js/all-1.1.0.min.js?v=1615563286"></script>
+
+
+
+
+<div id="fb-root"></div>
+
+
+<div id="container-root"></div>
+
+<script async src="https://meuartigo.brasilescola.uol.com.br/assets/js/bundle1.min.js?v=1595882379&confirm=1.2.1"></script>    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"6a5485b2c2","applicationID":"422257420","transactionName":"MwRWbRNYDEICUkFYXwpOdVoVUA1fTHBFQWwsFUBJPXoNXxdDWl1cARNHZSJWDEUGRFFecwsPQEsOVQ5UEXFWXl4QBEFdDn0DVQxC","queueTime":0,"applicationTime":66,"atts":"H0NVG1tCH0w=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>
